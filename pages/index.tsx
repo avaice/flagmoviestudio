@@ -187,10 +187,11 @@ export default function Home() {
               <h2>Result</h2>
               <video src={downloadUrl} controls></video>
 
-              {/* <a href={downloadUrl}>
-                ここを右クリックすると保存メニューが出てきます
-              </a> */}
               <p>動画を右クリック→名前を付けて動画を保存 から保存できます</p>
+              <p>
+                または、<a href={downloadUrl}>ここ</a>
+                を右クリックすると保存メニューが出てきます
+              </p>
 
               <button onClick={() => setDownloadUrl("")}>閉じる</button>
             </div>
