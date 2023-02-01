@@ -88,13 +88,21 @@ export default function Home() {
       </Head>
       <header>
         <h1>動画切り抜きくん</h1>
-        <a
-          href="http://twitter.com/share?url=https://flagmoviestudio.cho-ice.xyz/&text=動画切り抜きくん&via=_avaice&related=_avaice&hashtags=#flagmoviestudio"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Twitterでシェアする
-        </a>
+        <p>
+          ブラウザだけで動画を切り抜くことができます！
+          <br />
+          編集する動画はサーバーにはアップロードされず、ブラウザによって処理されます。
+        </p>
+        <p>
+          {" "}
+          <a
+            href="http://twitter.com/share?url=https://flagmoviestudio.cho-ice.xyz/&text=動画切り抜きくん&via=_avaice&related=_avaice&hashtags=#flagmoviestudio"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Twitterでシェアする
+          </a>
+        </p>
       </header>
       <main>
         <div className={styles.alertBadge}>
