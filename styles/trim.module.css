@@ -1,0 +1,82 @@
+.preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin: 0 auto;
+}
+.preview > label,
+.preview > video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.preview > label {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.preview > label > p {
+  font-size: 24px;
+}
+.preview > label > input {
+  display: none;
+}
+
+.trimControls {
+  margin: 10px 0;
+}
+.trimControls > button {
+  width: 50%;
+  height: 50px;
+}
+
+.trimButton {
+  width: 100%;
+  height: 50px;
+}
+
+.newButton {
+  margin-top: 10px;
+  color: red;
+  width: 100%;
+  height: 35px;
+}
+
+.progress {
+  font-size: 50px;
+  color: white;
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result > div {
+  background-color: white;
+  width: calc(100% - 20px);
+  padding: 10px;
+  max-width: 1000px;
+}
+.result > div > video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin: 0 auto;
+}
+.result > div > button {
+  display: block;
+  height: 30px;
+  width: 80px;
+  margin: 0 auto;
+}
