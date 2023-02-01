@@ -183,12 +183,20 @@ export default function Home() {
       <footer>
         <p>
           開発:{" "}
-          <a href="https://twitter.com/_avaice" target={"_blank"}>
+          <a
+            href="https://twitter.com/_avaice"
+            target={"_blank"}
+            rel="noreferrer"
+          >
             @_avaice
           </a>
         </p>
         <p>
-          <a href="https://github.com/avaice/flagmoviestudio" target={"_blank"}>
+          <a
+            href="https://github.com/avaice/flagmoviestudio"
+            target={"_blank"}
+            rel="noreferrer"
+          >
             View on GitHub!
           </a>
         </p>
