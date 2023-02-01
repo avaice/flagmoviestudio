@@ -103,6 +103,7 @@ export default function Home() {
         <a
           href="http://twitter.com/share?url=https://flagmoviestudio.cho-ice.xyz/&text=動画切り抜きくん&via=_avaice&related=_avaice&hashtags=#flagmoviestudio"
           target="_blank"
+          rel="noreferrer"
         >
           Twitterでシェアする
         </a>
