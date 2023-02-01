@@ -1,3 +1,13 @@
+.alertBadge {
+  background-color: rgb(190, 0, 0);
+  color: white;
+  margin: 5px 0;
+}
+.alertBadge > p {
+  line-height: 50px;
+  text-align: center;
+}
+
 .preview {
   position: relative;
   width: 100%;
@@ -79,4 +89,10 @@
   height: 30px;
   width: 80px;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 500px) {
+  .alertBadge {
+    display: none;
+  }
 }

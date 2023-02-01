@@ -87,19 +87,7 @@ export default function Home() {
         />
       </Head>
       <header>
-        <h1>
-          動画切り抜きくん{" "}
-          <span>
-            Powered by{" "}
-            <a
-              href="https://github.com/ffmpegwasm/ffmpeg.wasm"
-              target={"_blank"}
-              rel="noreferrer"
-            >
-              ffmpeg.wasm
-            </a>
-          </span>
-        </h1>
+        <h1>動画切り抜きくん</h1>
         <a
           href="http://twitter.com/share?url=https://flagmoviestudio.cho-ice.xyz/&text=動画切り抜きくん&via=_avaice&related=_avaice&hashtags=#flagmoviestudio"
           target="_blank"
@@ -109,6 +97,9 @@ export default function Home() {
         </a>
       </header>
       <main>
+        <div className={styles.alertBadge}>
+          <p>注意：携帯端末では動作しない可能性があります</p>
+        </div>
         <div className={styles.preview}>
           <video ref={videoRef} controls></video>
           {!selectedFile && (
