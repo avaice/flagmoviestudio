@@ -4,7 +4,15 @@ body {
   margin: 0 auto;
   padding: 0;
 }
-main > h1 {
+h1 {
   text-align: center;
   line-height: 100px;
+}
+
+footer {
+  margin: 50px 0;
+}
+footer > p,
+footer > a {
+  text-align: center;
 }
