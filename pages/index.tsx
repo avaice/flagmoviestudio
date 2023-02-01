@@ -79,7 +79,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="_avaice" />
+        <meta name="twitter:site" content="@_avaice" />
         <meta name="twitter:title" content="動画切り抜きくん" />
         <meta
           name="twitter:description"
