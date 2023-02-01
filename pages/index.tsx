@@ -74,13 +74,38 @@ export default function Home() {
         <title>動画切り抜きくん</title>
         <meta
           name="description"
-          content="高速に動画から一部分を切り取ることができるWebアプリ！"
+          content="高速に動画から一部分を切り取ることができるWebアプリ"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="_avaice" />
+        <meta name="twitter:title" content="動画切り抜きくん" />
+        <meta
+          name="twitter:description"
+          content="高速に動画から一部分を切り取ることができるWebアプリ"
+        />
       </Head>
       <header>
-        <h1>動画切り抜きくん</h1>
+        <h1>
+          動画切り抜きくん{" "}
+          <span>
+            Powered by{" "}
+            <a
+              href="https://github.com/ffmpegwasm/ffmpeg.wasm"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              ffmpeg.wasm
+            </a>
+          </span>
+        </h1>
+        <a
+          href="http://twitter.com/share?url=https://flagmoviestudio.cho-ice.xyz/&text=動画切り抜きくん&via=_avaice&related=_avaice&hashtags=#flagmoviestudio"
+          target="_blank"
+        >
+          Twitterでシェアする
+        </a>
       </header>
       <main>
         <div className={styles.preview}>
@@ -96,7 +121,7 @@ export default function Home() {
           From: {Math.floor(trimOption.from / 60)}:
           {Math.floor(trimOption.from % 60)}, To:{" "}
           {Math.floor(trimOption.to / 60)}:{Math.floor(trimOption.to % 60)}{" "}
-          (Duration: {Math.round((trimOption.to % 60) - (trimOption.from % 60))}
+          (Duration: {Math.round(trimOption.to - trimOption.from)}
           s)
         </p>
         <div className={styles.trimControls}>
@@ -150,7 +175,7 @@ export default function Home() {
                 変換状況: {Math.ceil(progress * 100)}%
               </p>
             ) : (
-              <p className={styles.progress}>変換準備中です...</p>
+              <p className={styles.progress}>変換中...</p>
             )}
           </div>
         )}

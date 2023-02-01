@@ -8,6 +8,9 @@ h1 {
   text-align: center;
   line-height: 100px;
 }
+h1 > span {
+  font-size: 14px;
+}
 
 footer {
   margin: 50px 0;
