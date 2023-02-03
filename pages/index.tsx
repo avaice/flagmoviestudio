@@ -59,12 +59,12 @@ export default function Home() {
       (trimOption.to - trimOption.from).toString(),
       "-c",
       "copy",
-      "output.mp4"
+      "Converted_" + selectedFile.name
     )
-    const data = ffmpeg.FS("readFile", "output.mp4")
+    const data = ffmpeg.FS("readFile", "Converted_" + selectedFile.name)
     setIsTrimming(false)
     setDownloadUrl(
-      URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }))
+      URL.createObjectURL(new Blob([data.buffer], { type: selectedFile.type }))
     )
   }
 
