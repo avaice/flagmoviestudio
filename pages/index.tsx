@@ -8,6 +8,7 @@ export default function Home() {
   })
 
   const videoRef = useRef<HTMLVideoElement>(null)
+  const dialogRef = useRef<HTMLDialogElement>(null)
   const [isTrimming, setIsTrimming] = useState(false)
   const [downloadUrl, setDownloadUrl] = useState("")
   const [selectedFile, setSelectedFile] = useState<File>()
@@ -66,6 +67,7 @@ export default function Home() {
     setDownloadUrl(
       URL.createObjectURL(new Blob([data.buffer], { type: selectedFile.type }))
     )
+    dialogRef.current?.showModal()
   }
 
   return (
@@ -109,13 +111,25 @@ export default function Home() {
           <p>注意：携帯端末では動作しない可能性があります</p>
         </div>
         <div className={styles.preview}>
-          <video ref={videoRef} controls></video>
           {!selectedFile && (
-            <label>
-              <p>ここをクリックして動画を選択！</p>
-              <input type="file" onChange={onSelectedFile}></input>
-            </label>
+            <button
+              onClick={() => {
+                document.getElementById("videoFileInput")?.click()
+              }}
+            >
+              ここをクリックして動画を選択！
+            </button>
           )}
+          <video
+            ref={videoRef}
+            controls
+            style={{ display: selectedFile ? "block" : "none" }}
+          ></video>
+          <input
+            type="file"
+            onChange={onSelectedFile}
+            id="videoFileInput"
+          ></input>
         </div>
         <p>
           From: {Math.floor(trimOption.from / 60)}:
@@ -180,18 +194,20 @@ export default function Home() {
           </div>
         )}
 
-        {downloadUrl !== "" && (
-          <div
-            className={`${styles.result} ${styles.wrapper}`}
-            id="resultWrapper"
+        <div className={downloadUrl !== "" ? styles.wrapper : ""}>
+          <dialog
+            ref={dialogRef}
+            className={styles.result}
+            id="resultDialog"
             // ごめんなさい
             onClick={(e: any) => {
-              if (e.target.id === "resultWrapper") {
+              if (e.target.id === "resultDialog") {
+                dialogRef.current?.close()
                 setDownloadUrl("")
               }
             }}
           >
-            <div>
+            <form method="dialog">
               <h2>Result</h2>
               <video src={downloadUrl} controls></video>
 
@@ -201,10 +217,12 @@ export default function Home() {
                 を右クリックすると保存メニューが出てきます
               </p>
 
-              <button onClick={() => setDownloadUrl("")}>閉じる</button>
-            </div>
-          </div>
-        )}
+              <button value="default" onClick={() => setDownloadUrl("")}>
+                閉じる
+              </button>
+            </form>
+          </dialog>
+        </div>
       </main>
       <footer>
         <p>

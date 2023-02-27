@@ -19,3 +19,7 @@ footer > p,
 footer > a {
   text-align: center;
 }
+
+button {
+  font-size: 14px;
+}
